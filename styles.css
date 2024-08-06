@@ -1,0 +1,433 @@
+/* Estilo geral da página */
+html, body {
+    margin: 0; /* Remove a margem padrão do body */
+    padding: 0; /* Remove o padding padrão do body */
+    box-sizing: border-box; /* Inclui o padding e a borda na largura e altura total dos elementos */
+    height: 100%; /* Garante que o body ocupe a altura total da tela */
+}
+
+/* Fundo degradê da página */
+body {
+    background: linear-gradient(to bottom, #000000, #808080, #ffffff); /* Degradê de preto para cinza e branco */
+    color: #333; /* Cor padrão do texto */
+    font-family: Arial, sans-serif; /* Fonte padrão */
+}
+
+/* Estilo do botão do menu hambúrguer */
+.menu-toggle {
+    position: fixed; /* Fixa o botão no canto superior esquerdo */
+    top: 20px; /* Espaço do topo */
+    left: 20px; /* Espaço da esquerda */
+    display: flex; /* Alinha as barras em linha */
+    flex-direction: column; /* Alinha as barras verticalmente */
+    cursor: pointer; /* Mostra o cursor de clique */
+    z-index: 1000; /* Garante que o botão esteja sobre outros elementos */
+}
+
+.menu-toggle .bar {
+    width: 30px; /* Largura das barras */
+    height: 3px; /* Altura das barras */
+    background-color: #333; /* Cor das barras */
+    margin: 4px 0; /* Espaço entre as barras */
+    transition: 0.3s; /* Transição suave ao clicar */
+}
+
+/* Estilo da aba do menu */
+.sidebar {
+    height: 100%; /* Ocupa a altura total da tela */
+    width: 0; /* Inicialmente oculta */
+    position: fixed; /* Fixa a aba ao lado esquerdo */
+    top: 0;
+    left: 0;
+    background-color: #111; /* Cor de fundo da aba */
+    overflow-x: hidden; /* Esconde a rolagem horizontal */
+    transition: 0.5s; /* Transição suave ao abrir e fechar */
+    padding-top: 60px; /* Espaço no topo */
+}
+
+/* Estilo dos links na aba do menu */
+.sidebar a {
+    padding: 8px 8px 8px 32px; /* Espaçamento dos itens */
+    text-decoration: none; /* Remove o sublinhado */
+    font-size: 25px; /* Tamanho da fonte */
+    color: #818181; /* Cor dos links */
+    display: block; /* Exibe como bloco */
+    transition: 0.3s; /* Transição suave ao passar o mouse */
+}
+
+.sidebar a:hover {
+    color: #f1f1f1; /* Cor ao passar o mouse */
+}
+
+/* Estilo do botão de fechar na aba do menu */
+.sidebar .closebtn {
+    position: absolute; /* Posiciona o botão de fechar */
+    top: 20px;
+    right: 25px;
+    font-size: 36px; /* Tamanho do ícone de fechar */
+    margin-left: 50px;
+    color: #818181; /* Cor do ícone de fechar */
+    cursor: pointer; /* Mostra o cursor de clique */
+}
+
+/* Estilo do título no topo centralizado */
+.header {
+    text-align: center; /* Centraliza o texto horizontalmente */
+    margin-top: 20px; /* Espaço do topo */
+}
+
+.header h1 {
+    font-size: 2em; /* Tamanho da fonte do título */
+    color: #ffffff; /* Cor do texto do título */
+    margin: 0; /* Remove a margem padrão */
+}
+
+/* Estilo do contêiner da imagem e do subtítulo */
+.image-container {
+    position: relative; /* Permite posicionar o subtítulo sobre a imagem */
+    text-align: center; /* Centraliza o texto dentro do contêiner */
+    margin-top: 40px; /* Espaço acima da imagem */
+}
+
+.image-container img {
+    width: 100vw; /* Faz com que a imagem ocupe toda a largura da tela */
+    height: 400px; /* Define a altura fixa da imagem */
+    object-fit: cover; /* Ajusta a imagem para cobrir o contêiner */
+}
+
+.image-caption {
+    position: absolute; /* Posiciona o subtítulo sobre a imagem */
+    top: 50%; /* Centraliza verticalmente */
+    left: 50%; /* Centraliza horizontalmente */
+    transform: translate(-50%, -50%); /* Ajusta a posição para o centro exato */
+    color: white; /* Cor do texto */
+    font-size: 2em; /* Tamanho da fonte do subtítulo */
+    letter-spacing: 3px; /* Espaçamento entre as letras */
+    background-color: transparent; /* Remove o fundo */
+    padding: 10px 20px; /* Espaçamento ao redor do texto */
+    border-bottom: 4px solid #800080; /* Adiciona uma barra roxa embaixo do texto */
+    border-radius: 10px; /* Arredonda os cantos do fundo */
+}
+
+/* Estilo do botão de contato dentro da imagem */
+.contact-button {
+    position: absolute; /* Posiciona o botão sobre a imagem */
+    bottom: 20px; /* Espaço do fundo da imagem */
+    left: 50%; /* Centraliza horizontalmente */
+    transform: translateX(-50%); /* Ajusta a posição para o centro exato */
+    display: inline-block; /* Exibe o botão em linha com o restante do conteúdo */
+    padding: 10px 20px; /* Espaçamento interno do botão */
+    font-size: 1.2em; /* Tamanho da fonte do botão */
+    color: white; /* Cor do texto do botão */
+    background-color: #800080; /* Fundo roxo */
+    text-decoration: none; /* Remove o sublinhado do link */
+    border-radius: 5px; /* Arredonda os cantos do botão */
+    transition: transform 0.3s ease, background-color 0.3s ease; /* Transições suaves para efeito de aumento e cor de fundo */
+}
+
+.contact-button:hover {
+    transform: scale(1.1); /* Aumenta o botão ao passar o mouse */
+    background-color: #5a005a; /* Cor de fundo mais escura ao passar o mouse */
+}
+
+/* Estilo da seção com fundo degradê */
+.black-section {
+    background: transparent; /* Remove o fundo da seção */
+    width: 100%; /* Largura total da tela */
+    padding: 20px; /* Espaçamento interno */
+    box-sizing: border-box; /* Inclui o padding na largura total */
+}
+
+.button-container {
+    display: flex; /* Alinha os botões em linha */
+    justify-content: center; /* Centraliza os botões horizontalmente */
+    gap: 20px; /* Espaço entre os botões */
+}
+
+/* Estilo dos botões na seção */
+.black-button {
+    display: flex; /* Alinha o ícone e o texto em linha */
+    align-items: center; /* Alinha o ícone e o texto verticalmente */
+    background-color: #333; /* Fundo dos botões */
+    color: white; /* Cor do texto dos botões */
+    text-decoration: none; /* Remove o sublinhado do link */
+    padding: 10px 20px; /* Espaçamento interno do botão */
+    border-radius: 5px; /* Arredonda os cantos do botão */
+    transition: transform 0.3s ease, background-color 0.3s ease; /* Transições suaves para efeito de aumento e cor de fundo */
+}
+
+.black-button:hover {
+    transform: scale(1.05); /* Aumenta o botão ao passar o mouse */
+    background-color: #555; /* Cor de fundo mais clara ao passar o mouse */
+}
+
+.button-icon {
+    width: 24px; /* Largura do ícone */
+    height: 24px; /* Altura do ícone */
+    margin-right: 8px; /* Espaço entre o ícone e o texto */
+}
+
+.map-address-container {
+    background-color: transparent; /* Remove o fundo da seção */
+    padding: 20px; /* Espaço interno ao redor do mapa e do endereço */
+    border-radius: 10px; /* Arredonda os cantos do fundo */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave para destaque */
+    max-width: 800px; /* Largura máxima do contêiner */
+    margin: 0 auto; /* Centraliza o contêiner horizontalmente */
+    text-align: center; /* Centraliza o texto dentro do contêiner */
+}
+
+/* Estiliza o texto do endereço */
+.address-info {
+    margin-bottom: 15px; /* Espaço abaixo do texto */
+    font-size: 18px; /* Tamanho da fonte do texto do endereço */
+    color: #333; /* Cor do texto do endereço */
+}
+
+/* Estiliza o mapa */
+.map iframe {
+    width: 100%; /* Ajusta a largura para preencher o contêiner */
+    height: 300px; /* Altura do mapa */
+    border: none; /* Remove a borda padrão do iframe */
+    border-radius: 5px; /* Arredonda os cantos do mapa */
+}
+/* Estilos gerais para telas grandes */
+body {
+    font-size: 16px;
+}
+
+.header h1 {
+    font-size: 2em;
+}
+
+.image-container img {
+    height: 400px;
+}
+
+.button-container {
+    flex-direction: row;
+}
+
+/* Estilos para dispositivos móveis */
+@media (max-width: 768px) {
+    .header h1 {
+        font-size: 1.5em;
+    }
+
+    .image-container img {
+        height: 250px; /* Ajuste a altura para telas menores */
+    }
+
+    .button-container {
+        flex-direction: column; /* Empilha os botões verticalmente */
+    }
+
+    .contact-button {
+        font-size: 1em; /* Ajuste o tamanho da fonte para telas menores */
+        padding: 8px 16px;
+    }
+    
+    .black-button {
+        font-size: 0.9em;
+        padding: 8px 16px;
+    }
+
+    .map iframe {
+        height: 200px; /* Ajusta a altura do mapa */
+    }
+}
+
+@media (max-width: 480px) {
+    .header h1 {
+        font-size: 1.2em;
+    }
+
+    .image-container img {
+        height: 200px;
+    }
+
+    .contact-button, .black-button {
+        font-size: 0.9em;
+        padding: 6px 12px;
+    }
+
+    .map iframe {
+        height: 150px; /* Ajusta ainda mais a altura do mapa */
+    }
+}
+/* Estilos existentes */
+/* ... */
+
+/* Efeito de Fade-in para imagem */
+.fade-in {
+    opacity: 0;
+    transition: opacity 2s ease-in;
+}
+
+.fade-in-visible {
+    opacity: 1;
+}
+
+/* Estilo da seção Parallax */
+.parallax {
+    background-image: url('images/parallax-bg.jpg');
+    min-height: 400px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    padding: 60px 20px;
+    position: relative;
+}
+
+.parallax-content {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+    transform: translateY(-20px);
+    animation: slideIn 1s ease-out forwards;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Estilo da seção de Depoimentos */
+.testimonials {
+    background-color: #f9f9f9;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.testimonials h2 {
+    margin-bottom: 20px;
+    font-size: 2.5em;
+    color: #333;
+    animation: fadeInUp 1s ease-out;
+}
+
+.testimonial {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: inline-block;
+    max-width: 400px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.testimonial:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.testimonial p {
+    font-size: 1.1em;
+    margin: 0;
+}
+
+.testimonial span {
+    display: block;
+    margin-top: 10px;
+    font-style: italic;
+    color: #555;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Estilo do Mapa */
+.map-address-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.map {
+    width: 100%;
+    max-width: 800px;
+    height: 400px;
+}
+
+.map iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 10px;
+}
+
+/* Estilo do Rodapé */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-content a {
+    color: #ddd;
+    text-decoration: none;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+.footer-content a:hover {
+    color: white;
+}
+
+/* Animação do Menu */
+.menu-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.menu-toggle .bar {
+    width: 30px;
+    height: 3px;
+    background-color: #333;
+    margin: 5px 0;
+    transition: all 0.3s ease;
+}
+
+.menu-toggle.open .bar:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 6px);
+}
+
+.menu-toggle.open .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.open .bar:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -6px);
+}
